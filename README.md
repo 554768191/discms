@@ -1,1 +1,5 @@
-"# discms" 
+"# discms"
+基于springboot搭建的轻量级CMS系统；
+持久层使用BerkeleyDB，模板引擎使用的是freemarker；
+管理后台的使用的是比较老的框架easyui，后端提供的是rest的接口，所以可以根据自身的需要换成angular或者vue；
+第一次安装请先指定BerkeleyDB的文件目录，拷贝根目录下面的tmp即可，然后修改Berkeley.properties;
