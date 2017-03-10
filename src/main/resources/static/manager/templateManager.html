@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../lib/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../lib/easyui/themes/icon.css">
+<script type="text/javascript" src="../lib/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../lib/easyui/locale/easyui-lang-zh_CN.js"></script>
+<style type="text/css">
+	#fm{
+            margin:0;
+            padding:10px 30px;
+        }
+    .ftitle{
+            font-size:14px;
+            font-weight:bold;
+            padding:5px 0;
+            margin-bottom:10px;
+            border-bottom:1px solid #ccc;
+        }
+    .fitem{
+            margin-bottom:5px;
+        }
+    .fitem label{
+            display:inline-block;
+            width:80px;
+        }
+    .fitem input{
+            width:160px;
+        }
+</style>
+<title>模板管理</title>
+</head>
+<body>
+	<table id="dg"></table>
+	<div id="toolbar">
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="useTemplate()">使用模板</a>
+	</div>
+</body>
+<script type="text/javascript">
+$(function(){
+	$('#dg').datagrid({
+		title:'模板管理',
+		toolbar:"#toolbar",
+		fitColumns:true,
+		singleSelect:true,
+		striped:true,
+		url:'/manager/template/iterator',
+		method:'get',
+		columns:[[
+					{field:'name',title:'模板名称',width:250,align:'center'}
+				]]
+	});
+});
+
+function useTemplate(){
+	var row = $('#dg').datagrid('getSelected');
+	if(!row){
+		$.messager.alert({
+            title: 'Error',
+            msg: '请选中一行！'
+        });
+	}
+	var url="/manager/template/use";
+	$.get(
+	  url,
+	  {name:row.name},
+	  function(result){
+		  alert(result);
+	  }
+	);
+}
+</script>
+</html>

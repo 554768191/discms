@@ -1,0 +1,58 @@
+.draw-money-list .row{
+    width: 92%;
+    margin: 0 auto;
+    border: 1px solid #DBDBDB;
+    background-color: white;
+    height: 2.2rem;
+    line-height: 2.2rem;
+}
+.draw-money-list input{
+    border: none;
+    width: 70%;
+}
+.draw-money-list .username{
+    width: 80%;
+}
+.draw-money-list>div:first-child{
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    margin-top: 0.9rem;
+}
+.draw-money-list>div:last-child{
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+}
+.draw-money-list .row i{
+	vertical-align: middle;
+}
+.draw-money-list .row .icon-right{
+	float: right;
+	margin-right: 1rem;
+}
+.draw-money-list .row select{
+    height: 2rem;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    padding:0rem 0.1rem;
+    width: 80%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    color: #333333;
+}
+.button-list button{
+    width: 92%;
+    margin: 0.5rem auto;
+    display: block;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    font-size: 1rem;
+}
+.button-list .draw-money-btn{
+    color: #ffffff;
+    background-color: #DA1E1C;
+    margin-top: 1.5rem;
+}

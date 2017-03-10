@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登录</title>
+<script src="../lib/jquery.min.js"></script>
+</head>
+<body>
+
+     <center>
+         <form>
+             <p>用户名：<input id="username" name="username"/></p>
+             <p>密码：<input id="password" name="password" type="password"/></p>
+             <input type="button" id="subbtn" value="登录" onclick="sub()"/>
+         </form>
+     </center>
+  
+</body>
+
+<script type="text/javascript">
+         
+         function sub(){
+        	 $.post(
+        	    '/manager/login',
+        	    $('form').serialize(),
+        	    function(result){
+        	       if("success"==result){
+        	    	   window.location.href='/manager/index.html';
+        	    	   return;
+        	       }
+        	       alert(result);
+        	    }
+        	 );
+        	 
+        	 
+        	 
+         }
+
+
+
+
+
+</script>
+
+
+
+
+
+</html>

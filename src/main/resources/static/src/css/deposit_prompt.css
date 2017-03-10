@@ -1,0 +1,14 @@
+.prompt-info{
+	background-color: white;
+	width: 92%;
+	margin: 8rem auto;
+	height: 4rem;
+	line-height: 4rem;
+	text-align: center;
+	border-radius: 0.3rem;
+	border: 1px solid #DBDBDB;
+}
+.prompt-info #time{
+	color: #da1e1c;
+	font-size: 1rem;
+}

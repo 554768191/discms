@@ -1,0 +1,67 @@
+.record-list .row, .record-result-list .row{
+	width: 92%;
+	margin: 0 auto;
+	border: 1px solid #DBDBDB;
+	background-color: white;
+	height: 2.2rem;
+	line-height: 2.2rem;
+}
+.record-list{
+	display: none;
+}
+.record-search-list>div:first-child{
+	 border-top-left-radius: 0.3rem;
+	 border-top-right-radius: 0.3rem;
+	 margin-top: 0.9rem;
+}
+.record-search-list>div:last-child{
+	border-bottom-left-radius: 0.3rem;
+	border-bottom-right-radius: 0.3rem;
+}
+.record-result-list .record-one>div:first-child{
+	border-top-left-radius: 0.3rem;
+	border-top-right-radius: 0.3rem;
+	margin-top: 0.9rem;
+}
+.record-result-list .record-one>div:last-child{
+	border-bottom-left-radius: 0.3rem;
+	border-bottom-right-radius: 0.3rem;
+}
+.record-result-info>div:last-child{
+	margin-bottom: 0.9rem;
+}
+.record-search-list input{
+	border: none;
+	width: 88%;
+}
+.record-search-list .row select{
+	height: 2rem;
+	-webkit-appearance: none;
+	appearance: none;
+	border: none;
+	padding: 0rem 0.1rem;
+	width: 80%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	background-color: #FFFFFF;
+	color: #333333;
+}
+.record-search-list .row .icon-right {
+    float: right;
+    margin-right: 1rem;
+}
+.button-list button{
+    width: 92%;
+    margin: 0.5rem auto;
+    display: block;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    font-size: 1rem;
+}
+.button-list .record-sumbit-btn{
+    color: #ffffff;
+    background-color: #DA1E1C;
+    margin-top: 1.5rem;
+}

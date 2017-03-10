@@ -1,0 +1,25 @@
+{
+  "name": "gc-moible-webapp",
+  "version": "1.0.0",
+  "description": "用Vue.js 重构gc手机web",
+  "main": "index.html",
+  "scripts": {
+  },
+  "repository": {
+  
+  },
+  "keywords": [
+    "gc",
+    "WebApp",
+    "Vue",
+    "vue.js"
+  ],
+  "author": "gavin",
+  "license": "ISC",
+  "engines": {
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}

@@ -1,0 +1,95 @@
+.deposit-details-list .row{
+    width: 92%;
+    margin: 0 auto;
+    border: 1px solid #DBDBDB;
+    background-color: white;
+    height: 1.8rem;
+    line-height: 1.8rem;
+}
+.deposit-details-list input{
+    border: none;
+    width: 70%;
+}
+.deposit-details-list .row i{
+	vertical-align: middle;
+}
+.deposit-details-list .row .icon-right{
+	float: right;
+	margin-right: 1rem;
+}
+.deposit-details-list .row select{
+    height: 1.8rem;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    padding:0rem 0.1rem;
+    width: 80%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    color: #333333;
+}
+.deposit-details-info>div:first-child{
+	text-align: center;
+	line-height: 1.5rem;
+	background-color: yellow;
+	margin: 0 auto;
+	width: 92%;
+	border: 1px solid #DBDBDB;
+	border-bottom: none;
+	border-top-left-radius: 0.3rem;
+	border-top-right-radius: 0.3rem;
+}
+.deposit-details-info>div:nth-child(6){
+	border-bottom-left-radius: 0.3rem;
+	border-bottom-right-radius: 0.3rem;
+}
+.deposit-details-info .row>div:first-child{
+	border-right: 1px solid #DBDBDB;
+}
+.deposit-details-data{
+	width: 92%;
+	font-size: 0.7rem;
+	margin: 0.4rem auto;
+	font-weight: bold;
+	text-align: center;
+}
+.deposit-details-write>div:first-child{
+	border-top-left-radius: 0.3rem;
+	border-top-right-radius: 0.3rem;
+}
+.deposit-details-write>div:last-child{
+	border-bottom-left-radius: 0.3rem;
+	border-bottom-right-radius: 0.3rem;
+}
+.deposit-remarks>ul{
+	width: 92%;
+	margin: 0.7rem auto;
+	font-size: 0.6rem
+}
+.deposit-remarks>ul{
+	line-height: 1rem;
+}
+.deposit-remarks>ul ul{
+	list-style-type: decimal;
+	margin: 0.5rem 0rem 0.5rem -1rem;
+}
+.button-list button{
+    width: 92%;
+    margin: 0.5rem auto;
+    display: block;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    font-size: 1rem;
+}
+.button-list .details-submit-btn{
+    color: #ffffff;
+    background-color: #DA1E1C;
+    margin-top: 1.5rem;
+}
+.button-list .details-previous-btn{
+    color: #ffffff;
+    background-color: #DA1E1C;
+}

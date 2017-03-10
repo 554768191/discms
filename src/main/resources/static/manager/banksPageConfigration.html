@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>个人银行卡信息页面配置</title>
+</head>
+<body>
+       <div style="margin:auto;width:800px;">
+                <p>
+                    <label for="">不允许修改取款人姓名：</label><input id="cashNameEdit" name="cashNameEdit" type="checkbox" />
+                </p>
+                <p>
+                    <label for="">存款绑定银行卡：</label><input id="despoistBindBank" name="despoistBindBank" type="checkbox"/>
+                </p>
+                <p>
+                    <input type="button" onclick="sub()" value="提交"/>
+                </p>
+                <p>
+                    <label for="">页面：</label><span id="registerPage">banks.html</span>
+                    <button onclick='createPage()'>生成页面</button>
+                    <a href="/src/CH/banks.html" target="_blank">预览页面</a>
+                </p>
+ 
+       </div>
+
+<script src="../lib/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.get(
+			   '/manager/editbank/get',
+			   {},
+			   function(result){
+				   if(result){
+					   var json=$.parseJSON(result);
+					   if(json.cashNameEdit==true){
+					     $('#cashNameEdit').prop('checked','checked');
+					   }
+					   if(json.despoistBindBank==true){
+						     $('#despoistBindBank').prop('checked','checked');
+					   }
+				   }
+				   
+			   }
+			);
+});
+
+function createPage(){
+	$.get(
+	   '/manager/banks/create',
+	   {},
+	   function(result){
+		   alert(result);
+	   }
+	);
+}
+
+function sub(){
+	var cashNameEdit=false;
+	var despoistBindBank=false;
+	if($('#cashNameEdit').prop('checked')){
+		cashNameEdit=true;
+	}
+	if($('#despoistBindBank').prop('checked')){
+		despoistBindBank=true;
+	}
+	$.post(
+	  '/manager/editbank/save',
+	  {cashNameEdit:cashNameEdit,despoistBindBank:despoistBindBank},
+	  function(result){
+		  alert(result);
+	  }
+	);
+	
+	
+}
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

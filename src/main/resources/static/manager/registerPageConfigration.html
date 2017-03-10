@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>注册页面配置</title>
+</head>
+<body>
+       <div style="margin:auto;width:800px;">
+               
+                <form action="/manager/app/put" method="POST">
+                      <p>
+                          <label for="usernameLength">用户名长度：</label>
+                          <input name="usernameLength" id="usernameLength" type="text" />
+                      </p>   
+                      <p>
+                          <label for="usernameVerfiy">用户名验证类别：</label>
+                          <select id="usernameVerfiy" name="usernameVerfiy">
+                             <option value="0">默认</option>
+                             <option value="1">英文和数字组合</option>
+                          </select>
+                      </p>
+                      <p>
+                          <label for="usernameDesc">用户名验证描述：</label>
+                          <input name="usernameDesc" id="usernameDesc" type="text" />
+                      </p> 
+                      <p>
+                          <label for="passwordLength">密码长度：</label>
+                          <input name="passwordLength" id="passwordLength" type="text" value=""/>
+                      </p>
+                      <p>
+                          <label for="displayName">是否显示真实姓名：</label>
+                          <input name="displayName" id="displayName" type="checkbox" />
+                      </p>
+                      <p>
+                          <label for="mustName">是否是必须录入：</label>
+                          <input name="mustName" id="mustName" type="checkbox" />
+                      </p>
+                      <p>
+                          <label for="nameExists">不允许姓名重复：</label>
+                          <input name="nameExists" id="nameExists" type="checkbox" />
+                      </p>
+                      <p>
+                          <label>是否显示电话号码：</label>
+                          <input name="displayPhone" id="displayPhone" type="checkbox" value=""/> 
+                      </p>
+                      <p>
+                          <label>电话号码是否必须录入：</label>
+                          <input name="mustPhone" id="mustPhone" type="checkbox" value=""/>
+                      </p>
+                      <p>
+                          <label>是否显示onlineCode：</label>
+                          <input name="displayOnlineCode" id="displayOnlineCode" type="checkbox" value=""/> 
+                      </p>     
+                      <p>    
+                          <label>onlineCode是否允许修改：</label>
+                          <input name="enableOnlineCode" id="enableOnlineCode" type="checkbox" value=""/>
+                      </p>
+                       <p>
+                          <label>是否显示取款密码：</label>
+                          <input name="displayCashPassword" id="displayCashPassword" type="checkbox" value=""/> 
+                       </p>
+                       <p>
+                          <label>取款密码是否是必须录入：</label>
+                          <input name="mustCashPassword" id="mustCashPassword" type="checkbox" value=""/>
+                       </p>
+                       <p>
+                          <label for="cashPasswordLength">取款密码长度范围</label>
+                          <input name="cashPasswordLength" id="cashPasswordLength" type="text" value=""/>
+                      </p>
+                      <p>
+                          <label>是否显示QQ号码：</label>
+                          <input name="displayQQ" id="displayQQ" type="checkbox" value=""/> 
+                       </p>
+                       <p>
+                          <label>QQ号是否是必须录入：</label>
+                          <input name="mustQQ" id="mustQQ" type="checkbox" value=""/>
+                       </p>
+                      <input type="button" value="提交" onclick="sub()"/>
+                </form>
+       
+       
+       
+                <p>
+                    <label for="">页面：</label><span id="registerPage">register.html</span>
+                    <button onclick='createPage()'>生成页面</button>
+                    <a href="/src/CH/register.html" target="_blank">预览页面</a>
+                </p>
+ 
+       </div>
+
+<script src="../lib/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.get(
+	   '/manager/register/get',
+	   {},
+	   function(result){
+		   if(result){
+			   var json=$.parseJSON(result);
+			   $('#usernameLength').val(json.usernameLength);
+			   $('#passwordLength').val(json.passwordLength);
+			   $('#cashPasswordLength').val(json.cashPasswordLength);
+			   if(json.displayName){
+				   $('#displayName').prop('checked','checked');
+			   }
+			   if(json.mustName){
+				   $('#mustName').prop('checked','checked');
+			   }
+			   if(json.nameExists){
+				   $('#nameExists').prop('checked','checked');
+			   }
+			   if(json.displayPhone){
+				   $('#displayPhone').prop('checked','checked');
+			   }
+			   if(json.mustPhone){
+				   $('#mustPhone').prop('checked','checked');
+			   }
+			   if(json.displayOnlineCode){
+				   $('#displayOnlineCode').prop('checked','checked');
+			   }
+			   if(json.enableOnlineCode){
+				   $('#enableOnlineCode').prop('checked','checked');
+			   }
+			   if(json.displayCashPassword){
+				   $('#displayCashPassword').prop('checked','checked');
+			   }
+			   if(json.mustCashPassword){
+				   $('#mustCashPassword').prop('checked','checked');
+			   }
+			   if(json.usernameDesc){
+				   $('#usernameDesc').val(json.usernameDesc);
+			   }
+			   if(json.usernameVerfiy){
+				   $('#usernameVerfiy').val(json.usernameVerfiy);
+			   }
+			   if(json.displayQQ){
+				   $('#displayQQ').prop('checked','checked');
+			   }
+			   if(json.mustQQ){
+				   $('#mustQQ').prop('checked','checked');
+			   }
+		   }
+		   
+	   }
+	);
+});
+
+function sub(){
+	var params={};
+	params.usernameLength=$('#usernameLength').val();
+	params.passwordLength=$('#passwordLength').val();
+	params.cashPasswordLength=$('#cashPasswordLength').val();
+	params.usernameDesc=$('#usernameDesc').val();
+	params.usernameVerfiy=$('#usernameVerfiy').val();
+	
+	$(":checkbox").each(function(i,element){
+		   if($(element).prop('checked')){
+			   params[$(element).prop('id')]=true;
+		   }else{
+			   params[$(element).prop('id')]=false;
+		   }
+	});
+	$.post(
+	   '/manager/register/put',
+	   params,
+	   function(result){
+		   alert(result);
+	   }
+	);
+}
+
+function createPage(){
+	$.get(
+	   '/manager/register/create',
+	   {},
+	   function(result){
+		   alert(result);
+	   }
+	);
+}
+</script>
+
+
+
+
+</body>
+</html>

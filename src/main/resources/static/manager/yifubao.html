@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>易付宝信息</title>
+</head>
+<body>
+       <div style="margin:auto;width:600px;height:600px;">
+               
+                <form action="/manager/app/put" method="POST">
+                      <p>
+                          <label for="merchant">商户号：</label>
+                          <input name="merchant" id="merchant" type="text" />
+                      </p>   
+                      <p>
+                          <label for="charset">编码类型：</label>
+                          <input name="charset" id="charset" type="text" />
+                      </p> 
+                      <p>
+                          <label for="pay_type">支付类别：</label>
+                          <input name="pay_type" id="pay_type" type="text" />
+                      </p>
+                      <p>
+                          <label for="key">key：</label>
+                          <input name="key" id="key" type="text" />
+                      </p>
+                      <p>
+                          <label for="url">提交地址：</label>
+                          <input name="url" id="url" type="text" />
+                      </p>
+                      <p>
+                          <label for="notifyUrl">回调地址：</label>
+                          <input name="notifyUrl" id="notifyUrl" type="text" />
+                      </p>
+                      <input type="button" value="提交" onclick="sub()"/>
+                </form>
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       </div>
+
+<script src="../lib/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.get(
+	   '/manager/yifubao/get',
+	   {},
+	   function(result){
+		   if(result){
+			   var json=$.parseJSON(result);
+			   $('#merchant').val(json.merchant);
+			   $('#charset').val(json.charset);
+			   $('#pay_type').val(json.pay_type);
+			   $('#key').val(json.key);
+			   $('#url').val(json.url);
+			   $('#notifyUrl').val(json.notifyUrl);
+		   }
+		   
+	   }
+	);
+});
+
+function sub(){
+	$.post(
+	   '/manager/yifubao/put',
+	   $('form').serialize(),
+	   function(result){
+		   alert(result);
+	   }
+	);
+}
+
+
+</script>
+
+
+
+
+</body>
+</html>

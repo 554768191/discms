@@ -1,0 +1,11 @@
+.activity-list>div:first-child{
+	margin-top: 0.9rem;
+}
+.activity-img{
+	width: 92%;
+	margin: 0 auto;
+}
+.activity-img img{
+	width: 100%;
+	border: 1px solid white;
+}

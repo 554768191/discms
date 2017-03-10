@@ -1,0 +1,82 @@
+.button-list button{
+    width: 92%;
+    margin: 0.5rem auto;
+    display: block;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    font-size: 1rem;
+}
+.gray>div .row{
+    width: 92%;
+    margin: 0 auto;
+    border: 1px solid #DBDBDB;
+    background-color: white;
+    height: 2.2rem;
+    line-height: 2.2rem;
+}
+.transfer-list input{
+    border: none;
+    width: 70%;
+}
+.transfer-list .username{
+    width: 80%;
+}
+.gray .transfer-list>div:first-child, .gray .transfer-operate>div:first-child, .gray .transfer-money>div:first-child{
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    margin-top: 0.9rem;
+}
+.gray .transfer-list>div:last-child, .gray .transfer-operate>div:last-child, .gray .transfer-money>div:last-child{
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+}
+.transfer-list .btn-show{
+    height: 1.4rem;
+    line-height: 1.4rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: #EDEDED;
+    text-align: center;
+    right: 3%;
+    top: 0.35rem;
+}
+.button-list .reg-sumbit-btn{
+    color: #ffffff;
+    background-color: #DA1E1C;
+    margin-top: 1.5rem;
+}
+.transfer-list .row .font-right{
+	padding-right: 0.5rem;
+	color: #da1e1c;
+}
+.transfer-operate .row .font-right span{
+	margin-bottom: 0.2rem;
+	margin-left: 0.4rem;
+	margin-right: 0.4rem;
+}
+.transfer-operate .row .font-right select{
+    height: 2rem;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    padding:0rem 0.1rem;
+    width: 40%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    color: #333333;
+}
+.transfer-hint{
+	color: #A0A0A0;
+	width: 92%;
+	font-size: 0.66rem;
+	margin: 0.5rem auto;
+}
+.transfer-money .row{
+	margin-top: 0 !important;
+}
+.transfer-money .row input{
+	border: none;
+}

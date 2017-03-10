@@ -1,0 +1,28 @@
+.betting-list .row{
+    width: 92%;
+    margin: 0 auto;
+    border: 1px solid #DBDBDB;
+    background-color: white;
+    height: 2.2rem;
+    line-height: 2.2rem;
+}
+.betting-list .row a{
+	color: #3d4145;
+	display: flex;
+}
+.betting-list>div:first-child{
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    margin-top: 0.9rem;
+}
+.betting-list>div:last-child{
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+}
+.betting-list .row i{
+	vertical-align: middle;
+}
+.betting-list .row .icon-right{
+	float: right;
+	margin-right: 1rem;
+}

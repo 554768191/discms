@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>扫码支付</title>
+<script type="text/javascript" src="../lib/jquery-1.8.0.js"></script>
+<script type="text/javascript" src="../lib/jquery.qrcode.js"></script>
+<script type="text/javascript" src="../lib/utf.js"></script>
+<script type="text/javascript">
+function sQrcode(qdata){
+
+	$("#showqrcode").empty().qrcode({		// 调用qQcode生成二维码
+		    // 设置渲染方式，有table和canvas，使用canvas方式渲染性能相对来说比较好
+			text : qdata,    				// 扫描了二维码后的内容显示,在这里也可以直接填一个网址或支付链接
+			width : "300",              	// 二维码的宽度
+			height : "300",             	// 二维码的高度
+			correctLevel : 0,
+			background : "#ffffff",     	// 二维码的后景色
+			foreground : "#000000",     	// 二维码的前景色
+			src: ""    	// 二维码中间的图片
+		});	
+		
+}	
+
+//获取url参数
+function getParam(paramName){
+	return this.location.search.substring(8);
+}
+
+
+$(document).ready(function(){
+	document.getElementById("showqrcode").style.color="red";
+	document.getElementById("showqrcode").style.fontSize="200%";
+	var qrcode=getParam("qrcode");
+	sQrcode(qrcode);
+});
+</script>
+</head>
+<body>
+<center>
+<br/>
+<div id="showqrcode"><img src=""></div>
+<br/>
+<button onclick="window.history.go(-1)" style="font-size:4.5rem;">返回</button>
+</center>
+</body>
+</html>

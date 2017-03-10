@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>讯付通信息</title>
+<link rel="stylesheet" type="text/css" href="../lib/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../lib/easyui/themes/icon.css">
+<script type="text/javascript" src="../lib/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../lib/easyui/locale/easyui-lang-zh_CN.js"></script>
+<style type="text/css">
+	#fm{
+            margin:0;
+            padding:10px 30px;
+        }
+    .ftitle{
+            font-size:14px;
+            font-weight:bold;
+            padding:5px 0;
+            margin-bottom:10px;
+            border-bottom:1px solid #ccc;
+        }
+    .fitem{
+            margin-bottom:5px;
+        }
+    .fitem label{
+            display:inline-block;
+            width:80px;
+        }
+    .fitem input{
+            width:160px;
+        }
+</style>
+</head>
+<body>
+<table id="dg"></table>
+<div id="toolbar">
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newAreas()">增加</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editAreas()">编辑</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyAreas()">删除</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="clearAll()">全部删除</a>
+</div>
+<div id="dlg" class="easyui-dialog"  style="width:400px;height:400px;padding:10px 20px" closed="true" buttons="#dlg-buttons">
+        <div class="ftitle">讯付通支付</div>
+            <form id="fm" action="/manager/xunfutong/put" method="POST">
+                      <p>
+                          <label for="id">ID：</label>
+                          <input name="id" id="id" type="text" />
+                      </p> 
+                      <p>
+                          <label for="merNo">商户号：</label>
+                          <input name="merNo" id="merNo" type="text" />
+                      </p>   
+                      <p>
+                          <label for="key">key：</label>
+                          <input name="key" id="key" type="text" />
+                      </p>
+                      <p>
+                          <label for="netway">支付网关：</label>
+                          <select name="netway" id="netway">
+                             <option value="">请选择</option>
+                             <option value="WX">微信</option>
+                             <option value="ZFB">支付宝</option>
+                             <option value="ZFB_WAP">支付宝WAP</option>
+                          </select>
+                      </p>  
+                       <p>
+                          <label for="goodsName">商品名称：</label>
+                          <input name="goodsName" id="goodsName" type="text" />
+                      </p>
+                      <p>
+                          <label for="bindUrl">绑定域名：</label>
+                          <input name="bindUrl" id="bindUrl" type="text" />
+                      </p>
+                      <p>
+                          <label for="callBackUrl">支付结果通知地址：</label>
+                          <input name="callBackUrl" id="callBackUrl" type="text" />
+                      </p>
+                      <p>
+                          <label for="callBackViewUrl">回显地址：</label>
+                          <input name="callBackViewUrl" id="callBackViewUrl" type="text" />
+                      </p>
+                      <p>
+                          <label for="url">提交地址：</label>
+                          <input name="url" id="url" type="text" />
+                      </p>
+                      <input type="button" value="提交" onclick="save()"/>
+           </form>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('#dg').datagrid({
+		title:'讯付通支付',
+		toolbar:"#toolbar",
+		fitColumns:true,
+		singleSelect:true,
+		striped:true,
+		url:'/manager/xunfutong/get',
+		method:'get',
+		columns:[[
+					{field:'id',title:'ID',width:50,align:'center'},
+					{field:'merNo',title:'商户号',width:150,align:'center'},
+					{field:'key',title:'KEY',width:150,align:'center'},
+					{field:'netway',title:'支付网关',width:150,align:'center'},
+					{field:'goodsName',title:'商品名称',width:100,align:'center'},
+					{field:'bindUrl',title:'绑定域名',width:250,align:'center'},
+					{field:'callBackUrl',title:'支付结果通知地址',width:250,align:'center'},
+					{field:'callBackViewUrl',title:'回显地址',width:250,align:'center'},
+					{field:'url',title:'提交地址',width:250,align:'center'}
+				]]
+	});
+});
+
+var url;
+function newAreas(){
+	 $('#dlg').dialog('open').dialog('setTitle','讯付通维护');
+	 $('#fm').form('clear');
+	 url='/manager/xunfutong/put';
+}
+
+function save(){
+	
+	$('#fm').form('submit',{
+		url:url,
+		onSubmit:function(){
+			
+			return $(this).form('validate');
+		},
+		success:function(result){
+			
+			if(result=='success'){
+				
+				$('#dlg').dialog('close');
+				$('#dg').datagrid('reload');
+				$.messager.show({
+                    title: 'Success',
+                    msg: '保存成功'
+                });
+			}
+		}
+	});
+}
+
+function editAreas(){
+	var row = $('#dg').datagrid('getSelected');
+	if(row){
+		 $('#dlg').dialog('open').dialog('setTitle','讯付通维护');
+		 $('#fm').form('clear');
+		 $('#fm').form('load',row);
+		 url='/manager/xunfutong/update';
+	}else{
+		$.messager.alert({
+            title: 'Error',
+            msg: '请选中一行！'
+        });
+	}
+}
+
+function destroyAreas(){
+	
+	var row = $('#dg').datagrid('getSelected');
+	if(row){
+		$.messager.confirm('Confirm','你确定要删除吗？',function(r){
+			if(r){
+				$.post('/manager/xunfutong/del',{"id":row.id},function(result){
+					if(result=='success'){
+						 $('#dg').datagrid('reload');
+						 $.messager.show({
+			                    title: 'Success',
+			                    msg: '删除成功！'
+			              });
+					}
+					
+					if(result=='error'){
+						$.messager.alert({
+				            title: 'Error',
+				            msg: '存在子节点不能删除！'
+				        });
+					}
+					
+					
+				});
+			}
+		});
+		
+	}else{
+		
+		$.messager.alert({
+            title: 'Error',
+            msg: '请选中一行！'
+        });
+	}
+}
+
+function clearAll(){
+	$.messager.confirm('Confirm','你确定要删除吗？',function(r){
+		if(r){
+			$.get('/manager/xunfutong/clear',{},function(result){
+				if(result=='success'){
+					 $('#dg').datagrid('reload');
+					 $.messager.show({
+		                    title: 'Success',
+		                    msg: '删除成功！'
+		              });
+				}
+				
+				if(result=='error'){
+					$.messager.alert({
+			            title: 'Error',
+			            msg: '存在子节点不能删除！'
+			        });
+				}
+			});
+		}
+	});
+}
+
+
+</script>
+
+
+
+
+</body>
+</html>

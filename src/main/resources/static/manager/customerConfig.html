@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>客服信息</title>
+</head>
+<body>
+       <div style="margin:auto;width:600px;height:600px;">
+               
+                <form action="/manager/customerService/save" method="POST">
+                      <p>
+                          <label for="type">类型：</label>
+                          <select id="type" name="type">
+                             <option value="1">链接</option>
+                             <option value="2">js植入</option>
+                             <option value="3">js引入</option>
+                          </select>
+                      </p>   
+                      <p>
+                          <label for="href">href：</label>
+                          <input name="href" id="href" type="text" />
+                      </p> 
+                      <p>
+                          <label for="code">code：</label>
+                          <textarea id="code" name="code" rows="20" cols="30"></textarea>
+                      </p>
+         
+                      <input type="button" value="提交" onclick="sub()"/>
+                </form>
+       </div>
+
+<script src="../lib/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.get(
+	   '/manager/customerService/get',
+	   {},
+	   function(result){
+		   if(result){
+			   var json=$.parseJSON(result);
+			   $("#type").find("option[value='"+json.type+"']").prop("selected",true);
+			   $('#href').val(json.href); 
+			   $('#code').val(json.code);
+		   }
+		   
+	   }
+	);
+});
+
+function sub(){
+	var params={};
+	params.type=$('#type').val();
+	params.href=$('#href').val();
+	params.code=$('#code').val();
+	$.post(
+	   '/manager/customerService/save',
+	   params,
+	   function(result){
+		   alert(result);
+	   }
+	);
+}
+
+
+</script>
+
+
+
+
+</body>
+</html>

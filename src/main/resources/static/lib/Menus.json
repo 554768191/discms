@@ -1,0 +1,189 @@
+{
+    "id": "100000",
+    "text": "菜单导航",
+    "children": [
+        {
+            "id": "110010",
+            "text": "系统管理",
+            "children": [
+                {
+                    "id": "110011",
+                    "text": "公司信息维护",
+                    "children": [],
+                    "url":"companyInfo",
+                    "flag":"0"
+                }, {
+                    "id": "110012",
+                    "text": "游戏类型维护",
+                    "children": [],
+                    "url":"gameType",
+                    "flag":"0"
+                }, {
+                    "id": "110013",
+                    "text": "游戏信息维护",
+                    "children": [],
+                    "url":"gameInfo",
+                    "flag":"0"
+                }, {
+                    "id": "110014",
+                    "text": "第三方信息维护",
+                    "children": [],
+                    "url":"thirdPlatformConfigration",
+                    "flag":"0"
+                }, {
+                    "id": "110015",
+                    "text": "银行信息维护",
+                    "children": [],
+                    "url":"banksInfo",
+                    "flag":"0"
+                }, {
+                    "id": "110016",
+                    "text": "公司入款银行信息维护",
+                    "children": [],
+                    "url":"depositBanks",
+                    "flag":"0"
+                }, {
+                    "id": "110017",
+                    "text": "公司入款存款类型信息维护",
+                    "children": [],
+                    "url":"wbType",
+                    "flag":"0"
+                }, {
+                    "id": "110018",
+                    "text": "客服信息维护",
+                    "children": [],
+                    "url":"customerConfig",
+                    "flag":"0"
+                },{
+                    "id": "110019",
+                    "text": "投注类型维护",
+                    "children": [],
+                    "url":"betType",
+                    "flag":"0"
+                },{
+                    "id": "110020",
+                    "text": "彩票类型维护",
+                    "children": [],
+                    "url":"lotteryType",
+                    "flag":"0"
+                },{
+                    "id": "110021",
+                    "text": "在线支付维护",
+                    "children": [],
+                    "url":"onlinepayConfigration",
+                    "flag":"0"
+                }
+            ]
+        },
+        {
+            "id": "130001",
+            "text": "支付管理",
+            "children": [
+               {
+                    "id": "130011",
+                    "text": "易付宝信息维护",
+                    "children": [],
+                    "url":"yifubao",
+                    "flag":"0"
+                },{
+                    "id": "130012",
+                    "text": "墨宝信息维护",
+                    "children": [],
+                    "url":"mokepay",
+                    "flag":"0"
+                },{
+                    "id": "130013",
+                    "text": "智付微信扫码",
+                    "children": [],
+                    "url":"zhifuQr",
+                    "flag":"0"
+                },{
+                    "id": "130014",
+                    "text": "银付宝",
+                    "children": [],
+                    "url":"yinbao",
+                    "flag":"0"
+                }
+            ]
+        },
+        {
+            "id": "120000",
+            "text": "页面维护",
+            "children": [
+                {
+                    "id": "120010",
+                    "text": "注册页面维护",
+                    "children": [],
+                    "url":"registerPageConfigration",
+                    "flag":"0"
+                },{
+                    "id": "120011",
+                    "text": "登录页面维护",
+                    "children": [],
+                    "url":"loginPageConfigration",
+                    "flag":"0"
+                },{
+                    "id": "120012",
+                    "text": "首页页面维护",
+                    "children": [],
+                    "url":"indexConfigration",
+                    "flag":"0"
+                },{
+                    "id": "120013",
+                    "text": "个人中心页面维护",
+                    "children": [],
+                    "url":"myPageConfigration",
+                    "flag":"0"
+                },{
+                    "id": "120014",
+                    "text": "个人银行页面维护",
+                    "children": [],
+                    "url":"banksPageConfigration",
+                    "flag":"0"
+                },{
+                    "id": "120015",
+                    "text": "个人信息页面维护",
+                    "children": [],
+                    "url":"editUserInfoPageConfigration",
+                    "flag":"0"
+                },{
+                    "id": "120016",
+                    "text": "密码修改页面维护",
+                    "children": [],
+                    "url":"changePasswordPageConfigration",
+                    "flag":"0"
+                },{
+                    "id": "120017",
+                    "text": "提款页面维护",
+                    "children": [],
+                    "url":"drawMoneyPageConfig",
+                    "flag":"0"
+                },{
+                    "id": "120018",
+                    "text": "公司入款页面维护",
+                    "children": [],
+                    "url":"depositPageConfig",
+                    "flag":"0"
+                },{
+                    "id": "120019",
+                    "text": "存取款记录页面维护",
+                    "children": [],
+                    "url":"moneyRecordConfig",
+                    "flag":"0"
+                },{
+                    "id": "120020",
+                    "text": "优惠活动页面维护",
+                    "children": [],
+                    "url":"activityPageConfig",
+                    "flag":"0"
+                },{
+                    "id": "120021",
+                    "text": "投注记录页面维护",
+                    "children": [],
+                    "url":"betTypePageConfig",
+                    "flag":"0"
+                }
+            ]
+        }
+    ]
+}

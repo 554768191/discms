@@ -1,0 +1,51 @@
+.wallet{
+    background-color: #ffffff;
+    margin-top: 0.5rem;
+    position: relative;
+}
+.wallet>div{
+    text-align: center;
+    padding-top: 0.5rem;
+}
+.wallet>div img{
+    width: 3.8rem;
+}
+.wallet .img-div{
+    height: 3.6rem;
+}
+.wallet .wallet-line1{
+    position: absolute;
+    width: 0.05rem;
+    background-color: #ECECEC;
+    height: 3.8rem;
+    left: 33%;
+    top: 1.5rem;
+}
+.wallet .wallet-line2{
+    position: absolute;
+    width: 0.05rem;
+    background-color: #ECECEC;
+    height: 3.8rem;
+    left: 66%;
+    top: 1.5rem;
+}
+.wallet-title{
+    height: 1.6rem;
+    line-height: 1.6rem;
+    text-indent: 0.6rem;
+}
+.wallet .wallet-line3{
+    width: 90%;
+    height: 0.05rem;
+    position: absolute;
+    background-color: #EDEDED;
+    bottom: 50%;
+    padding-top: 0;
+    left: 5%;
+}
+.pad-bottom{
+    padding-bottom: 1rem;
+}
+.no-mar{
+    margin-top: 0;
+}

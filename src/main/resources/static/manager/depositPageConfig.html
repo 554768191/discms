@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>公司入款信息维护页面配置</title>
+</head>
+<body>
+       <div style="margin:auto;width:800px;">
+               
+               <form>
+                   <p><label for="min">最小额度：<input id="min" name="minAmount" /></label></p>
+                   <p><label for="max">最大额度：<input id="max" name="maxAmount" /></label></p>
+                   <p><label for="isBindPhone">是否绑定手机号码：<input id="bindPhone" type="checkbox" name="bindPhone" value="0" /></label></p>
+               </form>
+               <input type="button" onclick="sub()" value="保存"/> 
+               <br/>
+               <br/>
+       
+                <p>
+                    <label for="">页面：</label><span id="registerPage">deposit1.html</span>
+                    <button onclick='createPage()'>生成页面</button>
+                    <a href="/src/CH/deposit1.html" target="_blank">预览页面</a>
+                </p>
+ 
+       </div>
+
+<script src="../lib/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.get(
+	  '/manager/deposit/get',
+	  {},
+	  function(result){
+		  if(result){
+			  var json=$.parseJSON(result);
+			  $('#min').val(json.minAmount);
+			  $('#max').val(json.maxAmount);
+			  if(json.bindPhone){
+				 $('#bindPhone').prop('checked','checked');
+			  }
+		  }
+		  
+	  }
+	);
+});
+
+function createPage(){
+	$.get(
+	   '/manager/deposit/create',
+	   {},
+	   function(result){
+		   alert(result);
+	   }
+	);
+}
+
+function sub(){
+	var params={};
+	params.minAmount=$('#min').val();
+	params.maxAmount=$('#max').val();
+	if($('#bindPhone').prop('checked')){
+		params.bindPhone=true;
+	}else{
+		params.bindPhone=false;
+	}
+	$.post(
+	  '/manager/deposit/save',
+	  params,
+	  function(result){
+		  alert(result);
+	  }
+	);
+}
+
+
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+.add_bank_list .row{
+    width: 92%;
+    margin: 0 auto;
+    border: 1px solid #DBDBDB;
+    background-color: white;
+    height: 2.2rem;
+    line-height: 2.2rem;
+}
+.add_bank_list>div:first-child{
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    margin-top: 0.9rem;
+}
+.add_bank_list>div:last-child{
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+}
+.add_bank_list input{
+    border: none;
+    width: 90%;
+}
+.add_bank_list .row .icon-right{
+	float: right;
+	margin-right: 1rem;
+}
+.add_bank_list .row select{
+    height: 2rem;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    padding:0rem 0.1rem;
+    width: 80%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    color: #333333;
+}
+.add_bank_botton_list{
+	margin-top: 0.9rem;
+}
+.add_bank_botton_list button{
+	width: 80%;
+	height: 2.2rem;
+	background-color: #ffffff;
+	border: 1px solid #DBDBDB;
+	margin: 0 auto;
+	display: block;
+	border-radius: 0.3rem;
+}
+.add_bank_botton_list .sumbit-btn{
+	background-color: #da1e1c;
+}
+::-webkit-input-placeholder{
+	color:red;
+	font-size:0.6rem
+} 
+textarea::-webkit-input-placeholder:after{
+  display:block;
+  content:"line@ \A line#";/*  \A 表示换行  */
+  color:red;
+  font-size:0.6rem;
+};

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>存取款记录配置</title>
+</head>
+<body>
+       <div style="margin:auto;width:800px;">
+               
+       
+                <p>
+                    <label for="">页面：</label><span id="registerPage">activity.html和activity_details.html</span>
+                    <button onclick='createPage()'>生成页面</button>
+                    <a href="/src/CH/activity.html" target="_blank">预览activity页面</a>
+                    <a href="/src/CH/activity_details.html" target="_blank">预览activity_details页面</a>
+                </p>
+              
+       </div>
+
+<script src="../lib/jquery.min.js"></script>
+<script type="text/javascript">
+function createPage(){
+	$.get(
+	   '/manager/activity/create',
+	   {},
+	   function(result){
+		   alert(result);
+	   }
+	);
+}
+</script>
+
+</body>
+</html>

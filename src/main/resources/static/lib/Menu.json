@@ -1,0 +1,231 @@
+{
+    "id": "100000",
+    "text": "菜单导航",
+    "children": [
+        {
+            "id": "110010",
+            "text": "系统管理",
+            "children": [
+                {
+                    "id": "110011",
+                    "text": "公司信息维护",
+                    "children": [],
+                    "url":"app.html",
+                    "flag":"0"
+                }, {
+                    "id": "110012",
+                    "text": "游戏类型维护",
+                    "children": [],
+                    "url":"gameType.html",
+                    "flag":"0"
+                }, {
+                    "id": "110013",
+                    "text": "游戏信息维护",
+                    "children": [],
+                    "url":"game.html",
+                    "flag":"0"
+                }, {
+                    "id": "110014",
+                    "text": "第三方信息维护",
+                    "children": [],
+                    "url":"thirdPlatformConfigration.html",
+                    "flag":"0"
+                }, {
+                    "id": "110015",
+                    "text": "银行信息维护",
+                    "children": [],
+                    "url":"banks.html",
+                    "flag":"0"
+                }, {
+                    "id": "110016",
+                    "text": "公司入款银行信息维护",
+                    "children": [],
+                    "url":"depositBanks.html",
+                    "flag":"0"
+                }, {
+                    "id": "110017",
+                    "text": "公司入款存款类型信息维护",
+                    "children": [],
+                    "url":"wbType.html",
+                    "flag":"0"
+                }, {
+                    "id": "110018",
+                    "text": "客服信息维护",
+                    "children": [],
+                    "url":"customerConfig.html",
+                    "flag":"0"
+                },{
+                    "id": "110019",
+                    "text": "投注类型维护",
+                    "children": [],
+                    "url":"betType.html",
+                    "flag":"0"
+                },{
+                    "id": "110020",
+                    "text": "彩票类型维护",
+                    "children": [],
+                    "url":"lotteryType.html",
+                    "flag":"0"
+                },{
+                    "id": "110021",
+                    "text": "在线支付维护",
+                    "children": [],
+                    "url":"onlinepayConfigration.html",
+                    "flag":"0"
+                },{
+                    "id": "110022",
+                    "text": "模板管理",
+                    "children": [],
+                    "url":"templateManager.html",
+                    "flag":"0"
+                },{
+                    "id": "110023",
+                    "text": "支付类型维护",
+                    "children": [],
+                    "url":"paytypeConfigration.html",
+                    "flag":"0"
+                }
+            ]
+        },
+        {
+            "id": "130001",
+            "text": "支付管理",
+            "children": [
+               {
+                    "id": "130011",
+                    "text": "易付宝信息维护",
+                    "children": [],
+                    "url":"yifubao.html",
+                    "flag":"0"
+                },{
+                    "id": "130012",
+                    "text": "墨宝信息维护",
+                    "children": [],
+                    "url":"mokepay.html",
+                    "flag":"0"
+                },{
+                    "id": "130013",
+                    "text": "智付微信扫码",
+                    "children": [],
+                    "url":"zhifuQr.html",
+                    "flag":"0"
+                },{
+                    "id": "130014",
+                    "text": "银付宝",
+                    "children": [],
+                    "url":"yinbao.html",
+                    "flag":"0"
+                },{
+                    "id": "130015",
+                    "text": "汇旺",
+                    "children": [],
+                    "url":"huiwang.html",
+                    "flag":"0"
+                },{
+                    "id": "130016",
+                    "text": "环迅",
+                    "children": [],
+                    "url":"huanxun.html",
+                    "flag":"0"
+                },{
+                    "id": "130017",
+                    "text": "闪付",
+                    "children": [],
+                    "url":"shanfu.html",
+                    "flag":"0"
+                },{
+                	"id": "130018",
+                	"text": "讯付通",
+                	"children": [],
+                	"url":"xunfutong.html",
+                	"flag":"0"
+                },{
+                	"id": "130018",
+                	"text": "彩虹支付",
+                	"children": [],
+                	"url":"caihong.html",
+                	"flag":"0"
+                }
+            ]
+        },
+        {
+            "id": "120000",
+            "text": "页面维护",
+            "children": [
+                {
+                    "id": "120010",
+                    "text": "注册页面维护",
+                    "children": [],
+                    "url":"registerPageConfigration.html",
+                    "flag":"0"
+                },{
+                    "id": "120011",
+                    "text": "登录页面维护",
+                    "children": [],
+                    "url":"loginPageConfigration.html",
+                    "flag":"0"
+                },{
+                    "id": "120012",
+                    "text": "首页页面维护",
+                    "children": [],
+                    "url":"indexConfigration.html",
+                    "flag":"0"
+                },{
+                    "id": "120013",
+                    "text": "个人中心页面维护",
+                    "children": [],
+                    "url":"myPageConfigration.html",
+                    "flag":"0"
+                },{
+                    "id": "120014",
+                    "text": "个人银行页面维护",
+                    "children": [],
+                    "url":"banksPageConfigration.html",
+                    "flag":"0"
+                },{
+                    "id": "120015",
+                    "text": "个人信息页面维护",
+                    "children": [],
+                    "url":"editUserInfoPageConfigration.html",
+                    "flag":"0"
+                },{
+                    "id": "120016",
+                    "text": "密码修改页面维护",
+                    "children": [],
+                    "url":"changePasswordPageConfigration.html",
+                    "flag":"0"
+                },{
+                    "id": "120017",
+                    "text": "提款页面维护",
+                    "children": [],
+                    "url":"drawMoneyPageConfig.html",
+                    "flag":"0"
+                },{
+                    "id": "120018",
+                    "text": "公司入款页面维护",
+                    "children": [],
+                    "url":"depositPageConfig.html",
+                    "flag":"0"
+                },{
+                    "id": "120019",
+                    "text": "存取款记录页面维护",
+                    "children": [],
+                    "url":"moneyRecordConfig.html",
+                    "flag":"0"
+                },{
+                    "id": "120020",
+                    "text": "优惠活动页面维护",
+                    "children": [],
+                    "url":"activityPageConfig.html",
+                    "flag":"0"
+                },{
+                    "id": "120021",
+                    "text": "投注记录页面维护",
+                    "children": [],
+                    "url":"betTypePageConfig.html",
+                    "flag":"0"
+                }
+            ]
+        }
+    ]
+}

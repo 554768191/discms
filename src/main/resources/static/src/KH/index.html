@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>新黄金城</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/sm.min.css">
+    <link rel="stylesheet" href="../css/sm-extend.min.css">
+    <link rel="stylesheet" href="../css/gc-all.css">
+</head>
+<body>
+<div class="page-group">
+    <header class="bar bar-nav red1" style="z-index:99">
+
+        <div style="height: 2rem;position: absolute;z-index: 999;">
+	        <a class="header-left-link pull-left my-btn" href="#" data-transition='slide-out'>
+                         <img class="header-img" src="../img/icon/flag_kh.png" style="margin-left: 0.4rem;">
+	        </a>
+        </div>
+        <div class="panel-overlay"></div>
+        <h1 class="title"><img class="header-logo" src="data:image/png;base64,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"></h1>
+
+        <a id="userlogin-balance" class="button button-link button-nav header-left-link pull-right external" href="login.html" data-transition='slide-out'>
+            <span class="font-white">ចូល</span>
+        </a>
+        <a id="userlogin-img" class="button button-link button-nav header-left-link pull-right external" href="login.html" data-transition='slide-out'>
+            <img class="header-img-right" src="../img/icon/user.png">
+        </a>
+
+    </header>
+    <nav class="bar bar-tab" id="nav-list" style="z-index:99">
+        <a class="tab-item active external" id="nav-index" href="index.html">
+            <span class="icon"><img class="bar-img" src="../img/icon/home_active.png"></span>
+            <span class="tab-label">ទំព័រដើម</span>
+        </a>
+        <a class="tab-item external" id="" href="http://messenger.providesupport.com/messenger/17jdc4hvjguno13znk1bili3l6.html">
+            <span class="icon"><img class="bar-img" src="../img/icon/service.png"></span>
+            <span class="tab-label">សេវាអតិថិជន</span>
+        </a>
+        <a class="tab-item external" id="nav-wallet" href="transfer.html">
+            <span class="icon"><img class="bar-img" src="../img/icon/wallet.png"></span>
+            <span class="tab-label">កាបូប</span>
+        </a>
+        <a class="tab-item external" id="" href="activity.html">
+            <span class="icon"><img class="bar-img" src="../img/icon/promotion.png"></span>
+            <span class="tab-label">អនុគ្រោះ</span>
+        </a>
+        <a class="tab-item external" id="nav-my" href="my.html">
+            <span class="icon"><img class="bar-img" src="../img/icon/my.png"></span>
+            <span class="tab-label">របស់ខ្ញុំ</span>
+        </a>
+    </nav>
+    
+    <div class="content gray close-panel">
+        <!-- Slider -->
+        <div class="swiper-container" style="padding-bottom:0;">
+            <div class="swiper-wrapper">
+            </div>
+        </div>
+        <div class="row background-white" style="padding-top: 0.25rem;">
+            <div class="col-15">
+                <img class="content-img" style="margin-left: 0.5rem;" src="../img/icon/speaker.png">
+            </div>
+            <div class="col-85">
+                <marquee id="notice" direction="left" behavior="scroll" scrollamount="3" scrolldelay="200">សូមស្វាគមន៍</marquee>
+            </div>
+        </div>
+        
+            <div class="content-h1 row no-gutter border-bottom">
+            <div class="col-100">
+                <span class="live-icon pull-left"></span>
+                <span class="pull-left font-bold" style="padding-top: 0.08rem;padding-left: 0.25rem;">វីដេអូផ្សាយបន្តផ្ទាល់</span>
+            </div>
+            </div>
+                <div class="background-white row no-gutter">
+                  <div class="col-30 text-center" style="padding: 0.75rem;">
+                          <div><img src="../img/icon/more.png" style="max-width: 100%"></div>
+                          <div><span class="font-bold font-gray font-middle">More</span></div>
+                  </div>
+                </div>  
+            <div class="content-h1 row no-gutter border-bottom">
+            <div class="col-100">
+                <span class="lottery-icon pull-left"></span>
+                <span class="pull-left font-bold" style="padding-top: 0.08rem;padding-left: 0.25rem;">ឆ្នោត</span>
+            </div>
+            </div>
+                   <div class="background-white row no-gutter">
+                <div class="col-30 text-center" style="padding: 0.75rem;" onclick="toProduct('/src/gclottery/index.do?gameType=lhc')">
+                    <div><img src="../img/icon/lhc.png" style="max-width: 100%"></div>
+                    <div><span class="font-bold font-gray font-middle">លោក Mark ប្រាំមួយរបស់ហុងកុង</span></div>
+                </div>
+                   <div class="col-5 text-center">
+                      <div class="ver-border"></div>
+                   </div> 
+                <div class="col-30 text-center" style="padding: 0.75rem;" onclick="toProduct('/src/gclottery/index.do?gameType=ssc')">
+                    <div><img src="../img/icon/ssc.png" style="max-width: 100%"></div>
+                    <div><span class="font-bold font-gray font-middle">ប៍នថេរ</span></div>
+                </div>
+                   <div class="col-5 text-center">
+                      <div class="ver-border"></div>
+                   </div> 
+                <div class="col-30 text-center" style="padding: 0.75rem;" onclick="toProduct('/src/gclottery/index.do?gameType=bjsc')">
+                    <div><img src="../img/icon/k3.png" style="max-width: 100%"></div>
+                    <div><span class="font-bold font-gray font-middle">រថយន្តទីក្រុងប៉េកាំង</span></div>
+                </div>
+                   </div>
+                   <div class="background-white row no-gutter">
+                <div class="col-30 text-center" style="padding: 0.75rem;" onclick="toProduct('/src/gclottery/index.do?gameType=klsf')">
+                    <div><img src="../img/icon/kl10f.png" style="max-width: 100%"></div>
+                    <div><span class="font-bold font-gray font-middle">សប្បាយចិត្តខ្លាំងណាស់</span></div>
+                </div>
+                   <div class="col-5 text-center">
+                      <div class="ver-border"></div>
+                   </div> 
+                <div class="col-30 text-center" style="padding: 0.75rem;" onclick="toProduct('/src/gclottery/index.do?gameType=kl8')">
+                    <div><img src="../img/icon/kl8.png" style="max-width: 100%"></div>
+                    <div><span class="font-bold font-gray font-middle">សប្បាយចិត្ត 8</span></div>
+                </div>
+                   <div class="col-5 text-center">
+                      <div class="ver-border"></div>
+                   </div> 
+                <div class="col-30 text-center" style="padding: 0.75rem;" onclick="toProduct('/src/gclottery/index.do?gameType=bjsc')">
+                    <div><img src="../img/icon/pk.png" style="max-width: 100%"></div>
+                    <div><span class="font-bold font-gray font-middle">PK10</span></div>
+                </div>
+                   </div>
+                   <div class="background-white row no-gutter">
+                <div class="col-30 text-center" style="padding: 0.75rem;" onclick="toProduct('/src/gclottery/index.do?gameType=pcdd')">
+                    <div><img src="../img/icon/pcdd.png" style="max-width: 100%"></div>
+                    <div><span class="font-bold font-gray font-middle">PCស៊ុត</span></div>
+                </div>
+                      <div class="col-5 text-center">
+                          <div class="ver-border"></div>
+                      </div>
+                      <div class="col-30 text-center" style="padding: 0.75rem;">
+                          <div><img src="../img/icon/more.png" style="max-width: 100%"></div>
+                          <div><span class="font-bold font-gray font-middle">More</span></div>
+                      </div>
+                   </div>
+            <div class="content-h1 row no-gutter border-bottom">
+            <div class="col-100">
+                <span class="sport-icon pull-left"></span>
+                <span class="pull-left font-bold" style="padding-top: 0.08rem;padding-left: 0.25rem;">ការប្រកួតប្រជែងកីឡា</span>
+            </div>
+            </div>
+                   <div class="background-white row no-gutter">
+                <div class="col-30 text-center" style="padding: 0.75rem;" onclick="toProduct('/src/ug/ug.html')">
+                    <div><img src="../img/icon/ug.png" style="max-width: 100%"></div>
+                    <div><span class="font-bold font-gray font-middle">UG កីឡា</span></div>
+                </div>
+                      <div class="col-5 text-center">
+                          <div class="ver-border"></div>
+                      </div>
+                      <div class="col-30 text-center" style="padding: 0.75rem;">
+                          <div><img src="../img/icon/more.png" style="max-width: 100%"></div>
+                          <div><span class="font-bold font-gray font-middle">More</span></div>
+                      </div>
+                   </div>
+            <div class="content-h1 row no-gutter border-bottom">
+            <div class="col-100">
+                <span class="slot-icon pull-left"></span>
+                <span class="pull-left font-bold" style="padding-top: 0.08rem;padding-left: 0.25rem;">Esporte</span>
+            </div>
+            </div>
+                   <div class="background-white row no-gutter">
+                <div class="col-30 text-center" style="padding: 0.75rem;" onclick="toProduct('/src/mg/mg.html')">
+                    <div><img src="../img/icon/mg.png" style="max-width: 100%"></div>
+                    <div><span class="font-bold font-gray font-middle">MG អេឡិចត្រូនិ</span></div>
+                </div>
+                   <div class="col-5 text-center">
+                      <div class="ver-border"></div>
+                   </div> 
+                <div class="col-30 text-center" style="padding: 0.75rem;" onclick="toProduct('/src/pt/pt.html')">
+                    <div><img src="../img/icon/pt.png" style="max-width: 100%"></div>
+                    <div><span class="font-bold font-gray font-middle">PT អេឡិចត្រូនិ</span></div>
+                </div>
+                      <div class="col-5 text-center">
+                          <div class="ver-border"></div>
+                      </div>
+                      <div class="col-30 text-center" style="padding: 0.75rem;">
+                          <div><img src="../img/icon/more.png" style="max-width: 100%"></div>
+                          <div><span class="font-bold font-gray font-middle">More</span></div>
+                      </div>
+                   </div>
+         
+        <div class="row">
+            <div class="col-100 text-center font-bold font-gray" style="padding: 0.25rem 0;">
+                <a href="http://www.500w168.com/index.do">ប្តូរទៅPC</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Left Panel with Reveal effect -->
+    <div class="panel panel-left panel-cover theme-dark" id='panel-js-demo' style="width: 40%; background-color: #2d2d2d;z-index:9;margin-top:1rem">
+        <div class="content-block text-center" id="lang">
+                     <div class="row no-gutter" style="margin: 1rem 0">
+                        <div class="col-40"><img data-lang="KH" src="../img/icon/flag_kh.png" style="width: 2rem; vertical-align: middle;"></div>
+                        <div class="col-60" style="line-height: 2rem;"><span style="color: #9A9A9A;">ភាសាខ្មែរ</span></div>
+                     </div>
+                     <div class="row no-gutter" style="margin: 1rem 0">
+                        <div class="col-40"><img data-lang="CH" src="../img/icon/lang_ch.png" style="width: 2rem; vertical-align: middle;"></div>
+                        <div class="col-60" style="line-height: 2rem;"><span style="color: #9A9A9A;">ភាសាចិនសាមញ្ញ</span></div>
+                     </div>
+        </div>
+    </div>
+</div>
+<script type='text/javascript' src='language.js' charset='utf-8'></script>
+<script type='text/javascript' src='../js/pc-all.js' charset='utf-8'></script>
+<script type='text/javascript' src='../js/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='../js/zepto-touch.js' charset='utf-8'></script>
+<script type='text/javascript' src='../js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='../js/sm-extend.min.js' charset='utf-8'></script>
+<script type='text/javascript' src="../js/http_request.js" charset='utf-8'></script>
+<script type='text/javascript' src='../js/index.js' charset='utf-8'></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>新黄金城</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/sm.min.css">
+    <link rel="stylesheet" href="../css/sm-extend.min.css">
+    <link rel="stylesheet" href="../css/gc-all.css">
+    <link rel="stylesheet" href="../css/login_register.css">
+</head>
+<body>
+<div class="page-group">
+    <header class="bar bar-nav red1">
+        <a class="button button-link button-nav pull-left external" href="login.html" data-transition='slide-out'>
+            <img class="header-img" src="../img/login/back_arrow.png">
+        </a>
+        <h1 class="title"><span class="font-white font-18">การลงทะเบียน</span></h1>
+
+        <a class="button button-link button-nav header-left-link pull-right external" href="login.html" data-transition='slide-out'>
+            <span class="font-white">เข้าสู่ระบบ</span>
+        </a>
+        <a class="button button-link button-nav header-left-link pull-right external" href="login.html" data-transition='slide-out'>
+            <img class="header-img-right" src="../img/icon/user.png">
+        </a>
+    </header>
+
+    <div class="content gray">
+        <form action="/member/register" method="POST">
+        <div class="reg-input-list font-14" >
+            <div class="row">
+                <div class="col-25 font-right font-bold">ชื่อผู้ใช้</div>
+                   <div class="col-75"><input type="text" ref="0" ver="6-15" id="accountno" name="accountno" class="username" placeholder="6-15ตัวอักษรตัวอักษรหรือตัวเลข"></div>
+            </div>
+            <div class="row pos-re">
+                <div class="col-25 font-right font-bold">รหัสผ่าน</div>
+                <div class="col-75"><input id="password" ver="passwordLength" name="password" type="password" class="password" placeholder="6-15รวมกันหลักของตัวอักษร"><input type="button" style="max-width:3rem;" class="btn-show pos-ab" value="แสดงผล"/></div>
+            </div>
+            <div class="row">
+                <div class="col-25 font-right font-bold">ยืนยันรหัสผ่าน</div>
+                <div class="col-75"><input id="confirmPassword" name="confirmPassword" type="password" class="confirm-password" placeholder="กรุณาใส่รหัสยืนยันที่"></div>
+            </div>
+            <div class="row">
+                <div class="col-25 font-right font-bold">ชื่อจริง</div>
+                <div class="col-75"><input ver="true" ref="true" id="cashName" name="cashName" type="text" class="real-name" placeholder="กรุณากรอกชื่อจริงของคุณ"></div>
+            </div>
+            <div class="row">
+                <div class="col-25 font-right font-bold">รหัสโปรโมชั่น</div>
+                <div class="col-75"><input id="onlineCode" name="onlineCode" readonly="readonly" type="text" class="promotion-code" placeholder="กรุณาใส่รหัสโปรโมชั่น"></div>
+            </div>
+            <div class="row">
+                <div class="col-25 font-right font-bold">หมายเลขโทรศัพท์</div>
+                <div class="col-75"><input ver="true" type="number" id="phone" name="phone" class="promotion-code" placeholder="กรุณากรอกหมายเลขโทรศัพท์มือถือของคุณ"></div>
+            </div>
+                <div class="row">
+                <div class="col-25 font-right font-bold">รหัสผ่านถอน</div>
+                <div class="col-75"><input ver="4-16" id="cashPassword" name="cashPassword" type="password" class="confirm-password" placeholder="กรุณากรอกตัวเลข 4 หลักถอนรหัสผ่าน"></div>
+            </div>
+            <div class="row">
+                <div class="col-25 font-right font-bold">รหัส</div>
+                <div class="col-50"><input id="captcha" name="captcha" type="number" class="verification-code" placeholder="กรุณากรอกรหัสยืนยัน"></div>
+                <div class="col-25"><img src="/regCode.do" style="width:100%;" onclick="reloadImage(this)"/></div>
+            </div>
+        </div>
+        </form>
+         <div class="button-list">
+            <button class="reg-register-btn" onclick="sub()">ลงทะเบียนตอนนี้</button>
+        </div>
+    </div>
+</div>
+<script type='text/javascript' src='language.js' charset='utf-8'></script>
+<script type='text/javascript' src='../js/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='../js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='../js/sm-extend.min.js' charset='utf-8'></script>
+
+<script type='text/javascript' src='../js/register.js'></script>
+</body>
+</html>

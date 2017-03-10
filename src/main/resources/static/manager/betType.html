@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../lib/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../lib/easyui/themes/icon.css">
+<script type="text/javascript" src="../lib/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../lib/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="js/betType.js"></script>
+<style type="text/css">
+	#fm{
+            margin:0;
+            padding:10px 30px;
+        }
+    .ftitle{
+            font-size:14px;
+            font-weight:bold;
+            padding:5px 0;
+            margin-bottom:10px;
+            border-bottom:1px solid #ccc;
+        }
+    .fitem{
+            margin-bottom:5px;
+        }
+    .fitem label{
+            display:inline-block;
+            width:80px;
+        }
+    .fitem input{
+            width:160px;
+        }
+</style>
+<title>游戏类型维护</title>
+</head>
+<body>
+	<table id="dg"></table>
+	<div id="toolbar">
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newAreas()">增加</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editAreas()">编辑</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyAreas()">删除</a>
+	</div>
+	<div id="dlg" class="easyui-dialog"  style="width:400px;height:400px;padding:10px 20px"
+            closed="true" buttons="#dlg-buttons">
+        <div class="ftitle">投注类型</div>
+        <form id="fm" method="post" novalidate>
+            <div class="fitem">
+                <label>ID:</label>
+                <input name="id" class="easyui-numberbox" required="required" data-options="missingMessage:'该输入项为必须项且只能输入数字!'">
+            </div>
+            <div class="fitem">
+                <label>名称:</label>
+                <input name="name" class="easyui-textbox" required="required">
+            </div>
+            <div class="fitem">
+                <label>code:</label>
+                <input name="code" class="easyui-textbox" required="required">
+            </div>
+            <div class="fitem">
+                <label>排序编号:</label>
+                <input name="sort" class="easyui-numberbox" required="required" data-options="missingMessage:'该输入项为必须项且只能输入数字!'">
+            </div>
+             <div class="fitem">
+                <label>链接:</label>
+                <input name="href" class="easyui-textbox" required="required" />
+            </div>
+        </form>
+       	
+    </div>
+    <div id="dlg-buttons">
+        <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="save()" style="width:90px">保存</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">取消</a>
+    </div>
+</body>
+</html>

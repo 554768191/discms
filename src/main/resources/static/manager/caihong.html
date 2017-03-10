@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>彩虹支付信息</title>
+<link rel="stylesheet" type="text/css" href="../lib/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../lib/easyui/themes/icon.css">
+<script type="text/javascript" src="../lib/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../lib/easyui/locale/easyui-lang-zh_CN.js"></script>
+<style type="text/css">
+	#fm{
+            margin:0;
+            padding:10px 30px;
+        }
+    .ftitle{
+            font-size:14px;
+            font-weight:bold;
+            padding:5px 0;
+            margin-bottom:10px;
+            border-bottom:1px solid #ccc;
+        }
+    .fitem{
+            margin-bottom:5px;
+        }
+    .fitem label{
+            display:inline-block;
+            width:80px;
+        }
+    .fitem input{
+            width:160px;
+        }
+</style>
+</head>
+<body>
+<table id="dg"></table>
+<div id="toolbar">
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newAreas()">增加</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editAreas()">编辑</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyAreas()">删除</a>
+</div>
+<div id="dlg" class="easyui-dialog"  style="width:400px;height:400px;padding:10px 20px" closed="true" buttons="#dlg-buttons">
+        <div class="ftitle">彩虹支付</div>
+            <form id="fm" action="/manager/yinbao/put" method="POST">
+                      <p>
+                          <label for="id">ID：</label>
+                          <input name="id" id="id" type="text" />
+                      </p> 
+                      <p>
+                          <label for="partner">商户号：</label>
+                          <input name="parter" id="parter" type="text" />
+                      </p>   
+                      <p>
+                          <label for="key">key：</label>
+                          <input name="key" id="key" type="text" />
+                      </p>
+                      <p>
+                          <label for="bankType">通道类型：</label>
+                          <select name="bankType" id="bankType">
+                             <option value="">请选择</option>
+                             <option value="1004">微信</option>
+                             <option value="992">支付宝</option>
+                          </select>
+                      </p>  
+                      <p>
+                          <label for="domain">绑定域名：</label>
+                          <input name="domain" id="domain" type="text" />
+                      </p>
+                      <p>
+                          <label for="backbackurl">回调地址：</label>
+                          <input name="backbackurl" id="backbackurl" type="text" />
+                      </p>
+                      <p>
+                          <label for="hrefbackurl">返回地址：</label>
+                          <input name="hrefbackurl" id="hrefbackurl" type="text" />
+                      </p>
+                      <p>
+                          <label for="url">提交地址：</label>
+                          <input name="url" id="url" type="text" />
+                      </p>
+                      <input type="button" value="提交" onclick="save()"/>
+           </form>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('#dg').datagrid({
+		title:'彩虹支付',
+		toolbar:"#toolbar",
+		fitColumns:true,
+		singleSelect:true,
+		striped:true,
+		url:'/manager/caihong/get',
+		method:'get',
+		columns:[[
+					{field:'id',title:'ID',width:50,align:'center'},
+					{field:'parter',title:'商户号',width:150,align:'center'},
+					{field:'key',title:'KEY',width:250,align:'center'},
+					{field:'bankType',title:'通道类型',width:150,align:'center'},
+					{field:'backbackurl',title:'回调地址',width:250,align:'center'},
+					{field:'domain',title:'绑定域名',width:250,align:'center'},
+					{field:'hrefbackurl',title:'返回地址',width:250,align:'center'},
+					{field:'url',title:'提交地址',width:250,align:'center'}
+				]]
+	});
+});
+
+var url;
+function newAreas(){
+	 $('#dlg').dialog('open').dialog('setTitle','彩虹支付维护');
+	 $('#fm').form('clear');
+	 url='/manager/caihong/put';
+}
+
+function save(){
+	
+	$('#fm').form('submit',{
+		url:url,
+		onSubmit:function(){
+			
+			return $(this).form('validate');
+		},
+		success:function(result){
+			
+			if(result=='success'){
+				
+				$('#dlg').dialog('close');
+				$('#dg').datagrid('reload');
+				$.messager.show({
+                    title: 'Success',
+                    msg: '保存成功'
+                });
+			}
+		}
+	});
+}
+
+function editAreas(){
+	var row = $('#dg').datagrid('getSelected');
+	if(row){
+		 $('#dlg').dialog('open').dialog('setTitle','银宝维护');
+		 $('#fm').form('clear');
+		 $('#fm').form('load',row);
+		 url='/manager/caihong/update';
+	}else{
+		$.messager.alert({
+            title: 'Error',
+            msg: '请选中一行！'
+        });
+	}
+}
+
+function destroyAreas(){
+	
+	var row = $('#dg').datagrid('getSelected');
+	if(row){
+		$.messager.confirm('Confirm','你确定要删除吗？',function(r){
+			if(r){
+				$.post('/manager/caihong/del',{"id":row.id},function(result){
+					if(result=='success'){
+						 $('#dg').datagrid('reload');
+						 $.messager.show({
+			                    title: 'Success',
+			                    msg: '删除成功！'
+			              });
+					}
+					
+					if(result=='error'){
+						$.messager.alert({
+				            title: 'Error',
+				            msg: '存在子节点不能删除！'
+				        });
+					}
+					
+					
+				});
+			}
+		});
+		
+	}else{
+		
+		$.messager.alert({
+            title: 'Error',
+            msg: '请选中一行！'
+        });
+	}
+}
+
+
+</script>
+
+
+
+
+</body>
+</html>

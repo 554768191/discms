@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>新黄金城</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/sm.min.css">
+    <link rel="stylesheet" href="../css/sm-extend.min.css">
+    <link rel="stylesheet" href="../css/gc-all.css">
+    <link rel="stylesheet" href="../css/deposit_money.css">
+</head>
+<body>
+<div class="page-group page">
+    <header class="bar bar-nav red1">
+        <a class="button button-link button-nav header-left-link pull-left external" href="my.html" data-transition='slide-out'>
+            <img class="header-img" src="../img/login/back_arrow.png">
+        </a>
+       
+        <h1 class="title"><span class="font-white font-18">เงินฝาก</span></h1>
+        
+    </header>
+
+    <div class="content gray">
+        <div class="deposit-money-list font-14">
+            <div class="row">
+                <div class="col-25 font-right font-bold">บัญชีสมาชิก</div>
+                <div class="col-75"><label class="account-no"></label></div>
+            </div>
+             <div class="row">
+                <div class="col-25 font-right font-bold">การชำระเงินธนาคาร</div>
+                <div class="col-75">
+                	<select id="payment-type">
+                		<option value="0" data-bank="">请选择</option>
+                		  <option value="1" data-bank="bank">中国银行</option>
+                		  <option value="2" data-bank="bank">中国农业银行</option>
+                		  <option value="3" data-bank="bank">中国民生银行</option>
+                		  <option value="4" data-bank="bank">中国建设银行</option>
+                		  <option value="5" data-bank="bank">中国招商银行</option>
+                		  <option value="6" data-bank="bank">中国工商银行</option>
+                		  <option value="7" data-bank="bank">中国交通银行</option>
+                		  <option value="8" data-bank="bank">中国邮政银行</option>
+                		  <option value="9" data-bank="bank">中国兴业银行</option>
+                		  <option value="10" data-bank="bank">华夏银行</option>
+                		  <option value="11" data-bank="bank">浦发银行</option>
+                		  <option value="12" data-bank="bank">广州银行</option>
+                		  <option value="17" data-bank="bank">北京银行</option>
+                		  <option value="18" data-bank="bank">平安银行</option>
+                		  <option value="23" data-bank="bank">中国光大银行</option>
+                		  <option value="21" data-bank="bank">上海农商银行</option>
+                		  <option value="24" data-bank="bank">中信银行</option>
+                		  <option value="30" data-bank="bank">上海银行</option>
+                		  <option value="31" data-bank="bank">广发银行</option>
+                		  <option value="32" data-bank="bank">渤海银行</option>
+                		  <option value="33" data-bank="bank">东莞银行</option>
+                		  <option value="34" data-bank="bank">杭州银行</option>
+                		  <option value="35" data-bank="bank">浙商银行</option>
+                		  <option value="36" data-bank="bank">温州银行</option>
+                		  <option value="37" data-bank="bank">晋商银行</option>
+                		  <option value="38" data-bank="bank">南京银行</option>
+                		  <option value="39" data-bank="bank">广州农商银行</option>
+                		  <option value="40" data-bank="bank">上海农商银行</option>
+                		  <option value="41" data-bank="bank">漢口银行</option>
+                		  <option value="42" data-bank="bank">顺德农商银行</option>
+                		  <option value="43" data-bank="bank">浙江稠州商业银行</option>
+                		  <option value="44" data-bank="bank">北京农商银行</option>
+                		  <option value="45" data-bank="bank">自贡市商业银行</option>
+                		  <option value="46" data-bank="bank">东莞农村商业银行</option>
+                		  <option value="47" data-bank="bank">甘肃银行</option>
+                		  <option value="48" data-bank="bank">贵阳银行</option>
+                		  <option value="49" data-bank="weixin">微信支付</option>
+                		  <option value="50" data-bank="alipay">支付宝</option>
+                		  <option value="52" data-bank="weixin_ew">微信扫码支付</option>
+                	</select>
+                	<span class="icon icon-right" ></span>
+                </div>
+            </div>
+        </div>
+        <div class="deposit-info">
+	        <div class="deposit-bank">โปรดเลือกธนาคาร</div>
+	        <div class="deposit-money-info font-14">
+	        	
+	        </div>
+        </div>
+
+        <div class="button-list">
+            <button class="payment-submit-btn">ถัดไป</button>
+        </div>
+
+    </div>
+</div>
+<script type='text/javascript'>
+   var bindPhone='false';
+</script> 
+<script type='text/javascript' src='language.js' charset='utf-8'></script>
+<script type='text/javascript' src='../js/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='../js/zepto-touch.js' charset='utf-8'></script>
+<script type='text/javascript' src='../js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='../js/sm-extend.min.js' charset='utf-8'></script>
+<script type='text/javascript' src="../js/http_request.js" charset='utf-8'></script>
+<script type='text/javascript' src='../js/deposit_money.js' charset='utf-8'></script>
+</body>
+</html>

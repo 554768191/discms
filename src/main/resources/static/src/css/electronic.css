@@ -1,0 +1,9 @@
+.content-h1{
+	padding: 0.25rem 0.5rem;
+}
+.font-small{
+	display:block;
+	white-space:nowrap; 
+	overflow:hidden; 
+	text-overflow:ellipsis;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>在线支付配置信息</title>
+</head>
+<body>
+       <div style="margin:auto;width:600px;height:600px;">
+               
+                <form action="/manager/app/put" method="POST">
+                      <p>
+                          <label for="minAmount">最小金额:</label>
+                          <input name="minAmount" id="minAmount" type="text" />
+                      </p>   
+                      <p>
+                          <label for="maxAmount">最大金额：</label>
+                          <input name="maxAmount" id="maxAmount" type="text" />
+                      </p> 
+                      <p><label for="isBindPhone">是否绑定手机号码：<input id="bindPhone" type="checkbox" name="bindPhone" value="0" /></label></p>
+                      <input type="button" value="提交" onclick="sub()"/>
+                </form>
+                <p>
+                    <label for="">页面：</label><span id="registerPage">online_payment.html</span>
+                    <button onclick='createPage()'>生成页面</button>
+                    <a href="/src/CH/online_payment.html" target="_blank">预览页面</a>
+                </p>
+       
+       </div>
+
+<script src="../lib/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.get(
+	   '/manager/onlinepay/get',
+	   {},
+	   function(result){
+		   if(result){
+			   var json=$.parseJSON(result);
+			   $('#minAmount').val(json.minAmount);
+			   $('#maxAmount').val(json.maxAmount);
+			   if(json.bindPhone){
+					 $('#bindPhone').prop('checked','checked');
+			   }
+		   }
+		   
+	   }
+	);
+});
+
+
+function sub(){
+	var params={};
+	params.minAmount=$('#minAmount').val();
+	params.maxAmount=$('#maxAmount').val();
+	if($('#bindPhone').prop('checked')){
+		params.bindPhone=true;
+	}else{
+		params.bindPhone=false;
+	}
+	$.post(
+	   '/manager/onlinepay/put',
+	   params,
+	   function(result){
+		   alert(result);
+	   }
+	);
+}
+
+
+function createPage(){
+	$.get(
+	   '/manager/onlinepay/create',
+	   {},
+	   function(result){
+		   alert(result);
+	   }
+	);
+}
+
+
+</script>
+
+
+
+
+</body>
+</html>

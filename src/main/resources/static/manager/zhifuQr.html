@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>支付微信扫码信息</title>
+</head>
+<body>
+       <div style="margin:auto;width:600px;height:600px;">
+               
+                <form action="/manager/app/put" method="POST">
+                      <p>
+                          <label for="merchantCode">商户号：</label>
+                          <input name="merchantCode" id="merchantCode" type="text" />
+                      </p>   
+                      <p>
+                          <label for="serviceType">服务类型：</label>
+                          <input name="serviceType" id="serviceType" type="text" />
+                      </p> 
+                      <p>
+                          <label for="interfaceVersion">接口版本：</label>
+                          <input name="interfaceVersion" id="interfaceVersion" type="text" />
+                      </p>
+                      <p>
+                          <label for="signType">签名类型：</label>
+                          <input name="signType" id="signType" type="text" />
+                      </p>
+                      <p>
+                          <label for="productName">产品名称：</label>
+                          <input name="productName" id="productName" type="text" />
+                      </p>
+                      <p>
+                          <label for="privateKey">key：</label>
+                          <input name="privateKey" id="privateKey" type="text" />
+                      </p>
+                      <p>
+                          <label for="qrUrl">提交地址：</label>
+                          <input name="qrUrl" id="qrUrl" type="text" />
+                      </p>
+                      <p>
+                          <label for="notifyUrl">回调地址：</label>
+                          <input name="notifyUrl" id="notifyUrl" type="text" />
+                      </p>
+                      <input type="button" value="提交" onclick="sub()"/>
+                </form>
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       </div>
+
+<script src="../lib/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.get(
+	   '/manager/zhifuQr/get',
+	   {},
+	   function(result){
+		   if(result){
+			   var json=$.parseJSON(result);
+			   $('#merchantCode').val(json.merchantCode);
+			   $('#serviceType').val(json.serviceType);
+			   $('#interfaceVersion').val(json.interfaceVersion);
+			   $('#signType').val(json.signType);
+			   $('#productName').val(json.productName);
+			   $('#privateKey').val(json.privateKey);
+			   $('#qrUrl').val(json.qrUrl);
+			   $('#notifyUrl').val(json.notifyUrl);
+		   }
+		   
+	   }
+	);
+});
+
+function sub(){
+	$.post(
+	   '/manager/zhifuQr/put',
+	   $('form').serialize(),
+	   function(result){
+		   alert(result);
+	   }
+	);
+}
+
+
+</script>
+
+
+
+
+</body>
+</html>

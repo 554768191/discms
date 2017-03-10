@@ -1,0 +1,115 @@
+.my-title-img{
+    background: url("../img/my/profile_bg.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 6.2rem;
+}
+.my-title-img .title-top{
+    display: inline-block;
+    width: 100%;
+}
+.my-title-img .title-top div{
+    height: 3.2rem;
+    line-height: 3.2rem;
+}
+.my-title-img .title-top img{
+    width: 2.8rem;
+    margin-top: 0.3rem;
+    margin-left: 10%;
+}
+.my-title-img .title-bottom{
+    height: 2.6rem;
+    background-color: #DA1E1C;
+    filter:alpha(opacity=80);
+    -moz-opacity:0.8;
+    -khtml-opacity: 0.8;
+    opacity: 0.8;
+}
+.my-title-img .title-bottom .title-bottom-div{
+    padding-top: 0.3rem;
+    position: relative;
+}
+.my-title-img .title-bottom .col-50 div{
+    text-align: center;
+    height: 1rem;
+    line-height: 1rem;
+}
+.my-title-img .title-bottom div img{
+    width: 1.2rem;
+    vertical-align: middle;
+}
+.my-title-img .title-bottom .my-line{
+    height: 2rem;
+    width: 0.05rem;
+    float: left;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 0.3rem;
+    filter:alpha(opacity=30);
+    -moz-opacity:0.3;
+    -khtml-opacity: 0.3;
+    opacity: 0.3;
+}
+.my-btn-list{
+    margin: 0.5rem 0;
+}
+.my-btn-list button{
+    width: 80%;
+    height: 2.2rem;
+    background-color: #ffffff;
+    border: 1px solid #FA3737;
+    margin: 0 auto;
+    display: block;
+    border-radius: 0.3rem;
+}
+.my-btn-list a:hover{
+	color: #da1e1c;
+}
+.menu-list{
+    margin-bottom: 1rem;
+}
+.menu-list>div{
+    width: 92%;
+    margin: 0 auto;
+    border: 1px solid #DBDBDB;
+    background-color: white;
+    height: 2.2rem;
+    line-height: 2.2rem;
+ }
+.menu-list>div:first-child{
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+}
+.menu-list>div:nth-child(3){
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    margin-bottom: 1rem;
+}
+.menu-list>div:nth-child(4){
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+}
+.menu-list>div:last-child{
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+}
+.menu-list a{
+	color: #3d4145;
+	display: flex;
+}
+.title-bottom-div a:hover{
+	color: #fff;
+}
+.button-list button{
+    width: 92%;
+    margin: 0.5rem auto;
+    display: block;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #DA1E1C;
+}

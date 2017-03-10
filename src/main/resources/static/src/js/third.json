@@ -1,0 +1,23 @@
+{
+	"data":[{
+		"id":"1",
+		"name":"主账户",
+		"code":"gc"
+	},{
+		"id":"2",
+		"name":"BBIN",
+		"code":"bbin"
+	},{
+		"id":"3",
+		"name":"AG真人",
+		"code":"ag"
+	},{
+		"id":"4",
+		"name":"GD",
+		"code":"gd"
+	},{
+		"id":"5",
+		"name":"AB",
+		"code":"ab"
+	}]
+}

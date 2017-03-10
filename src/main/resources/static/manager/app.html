@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>公司信息</title>
+</head>
+<body>
+       <div style="margin:auto;width:600px;height:600px;">
+               
+                <form action="/manager/app/put" method="POST">
+                      <p>
+                          <label for="company">公司名称：</label>
+                          <input name="company" id="company" type="text" />
+                      </p>   
+                      <p>
+                          <label for="company">包网号：</label>
+                          <input name="cagent" id="cagent" type="text" />
+                      </p> 
+                      <p>
+                          <label for="logos">LOGO：</label>
+                          <input name="logos" id="logos" type="file" value="选择图片" onchange="readFile(this)"/>
+                          <input name="logo" type="hidden" id="logo"/>
+                          <span id="image"></span>
+                      </p>
+                      <p>
+                          <label for="domain">域名：</label>
+                          <input name="domain" id="domain" type="text" />
+                      </p>
+                      <p>
+                          <label>语言版本：</label>
+                          <input type="checkbox" value="US"/> 英文
+                          <input type="checkbox" value="TH"/> 泰语
+                          <input type="checkbox" value="KH"/> 柬语
+                          <input type="checkbox" value="CH" checked/> 中文简体
+                          <input type="checkbox" value="HK"/> 中文繁体
+                      </p>
+                      <p>
+                          <label>默认语言：</label>
+                          <select id="defaultLanguage" name="defaultLanguage">
+                             <option value="CH" selected>中文简体</option>
+                             <option value="US" selected>英文</option>
+                             <option value="TH" selected>泰语</option>
+                             <option value="HK" selected>中文繁体</option>
+                             <option value="KH" selected>柬语</option>
+                          </select> 
+                      </p>
+                      <input type="button" value="提交" onclick="sub()"/>
+                </form>
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       </div>
+
+<script src="../lib/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.get(
+	   '/manager/app/get',
+	   {},
+	   function(result){
+		   if(result){
+			   var json=$.parseJSON(result);
+			   $('#company').val(json.company);
+			   $('#image').html('<img src="'+json.logo+'" alt=""/>'); 
+			   $('#domain').val(json.domain);
+			   $('#cagent').val(json.cagent);
+			   $('#logo').val(json.logo);
+			   $(":checkbox").each(function(i,element){
+				   if($(element).val()){
+					   if(json.lang.indexOf($(element).val())>-1){
+						   $(element).prop('checked','checked');
+					   }
+				   }
+			   });
+			   $('#defaultLanguage').val(json.defaultLanguage);
+		   }
+		   
+	   }
+	);
+});
+
+
+
+
+function readFile(obj){
+    var file = obj.files[0]; 
+    //这里我们判断下类型如果不是图片就返回 去掉就可以上传任意文件   
+    if(!/image\/\w+/.test(file.type)){
+        alert("请确保文件为图像类型"); 
+        return false; 
+    }
+    var reader = new FileReader(); 
+    reader.readAsDataURL(file); 
+    reader.onload = function(e){ 
+            $('#logo').val(this.result); 
+            $('#image').html('<img src="'+this.result+'" alt=""/>'); 
+    }
+} 
+
+
+function sub(){
+	var params={};
+	params.company=$('#company').val();
+	params.logo=$('#logo').val();
+	params.domain=$('#domain').val();
+	params.cagent=$('#cagent').val();
+	params.lang='';
+	$(":checkbox").each(function(i,element){
+		   if($(element).prop('checked')){
+			   params.lang=params.lang+$(element).val()+',';
+		   }
+	});
+	params.defaultLanguage=$('#defaultLanguage').val();
+	$.post(
+	   '/manager/app/put',
+	   params,
+	   function(result){
+		   alert(result);
+	   }
+	);
+}
+
+
+</script>
+
+
+
+
+</body>
+</html>

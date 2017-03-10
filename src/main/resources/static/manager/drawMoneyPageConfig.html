@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>提款信息维护页面配置</title>
+</head>
+<body>
+       <div style="margin:auto;width:800px;">
+               
+               <form>
+                   <p><label for="min">最小额度：<input id="min" name="minAmount" /></label></p>
+                   <p><label for="max">最大额度：<input id="max" name="maxAmount" /></label></p>
+                   
+               </form>
+               <input type="button" onclick="sub()" value="保存"/> 
+               <br/>
+               <br/>
+       
+                <p>
+                    <label for="">页面：</label><span id="registerPage">draw_money.html</span>
+                    <button onclick='createPage()'>生成页面</button>
+                    <a href="/src/CH/draw_money.html" target="_blank">预览页面</a>
+                </p>
+ 
+       </div>
+
+<script src="../lib/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.get(
+	  '/manager/draw/get',
+	  {},
+	  function(result){
+		  if(result){
+			  var json=$.parseJSON(result);
+			  $('#min').val(json.minAmount);
+			  $('#max').val(json.maxAmount);
+		  }
+		  
+	  }
+	);
+});
+
+function createPage(){
+	$.get(
+	   '/manager/draw/create',
+	   {},
+	   function(result){
+		   alert(result);
+	   }
+	);
+}
+
+function sub(){
+	$.post(
+	  '/manager/draw/save',
+	  $('form').serialize(),
+	  function(result){
+		  alert(result);
+	  }
+	);
+}
+
+
+</script>
+
+
+
+
+</body>
+</html>

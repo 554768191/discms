@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta  http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>gc mobile cms</title>
+ <link rel="stylesheet" type="text/css" href="../lib/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../lib/easyui/themes/icon.css">
+<script type="text/javascript" src="../lib/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../lib/easyui/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+<div id="cc" class="easyui-layout" style="" fit="true"> 
+     <!-- 北面布局 -->  
+    <div id="cc" class="easyui-layout" fit="true">  
+    <div data-options="region:'north'" style="height:30px;background:#E4EFFF">
+         <a href="javascript:void(0)" class="easyui-linkbutton" plain=true data-options="iconCls:'icon-application_home'" onclick=""><strong>gc手机cms管理</strong></a> 
+         <a href="javascript:void(0)" onclick="cancel()" class="easyui-linkbutton" plain=true data-options="iconCls:'icon-cancel'" style="float:right;"><strong>安全退出</strong></a>
+         <a href="javascript:void(0)" onclick="menuTab('app.html','桌面')" class="easyui-linkbutton" plain=true data-options="iconCls:'icon-application'" style="float:right;"><strong>桌面</strong></a>
+    </div>  
+    <div id="south" data-options="region:'south'" style="height:30px;">
+      <center>
+       <a href="javascript:void(0)" class="easyui-linkbutton" plain=true data-options="iconCls:'icon-user'"><strong>欢迎登录系统！</strong></a> 
+      </center>
+    </div>  
+    <div id="west" data-options="region:'west',title:'菜单导航',split:true" style="width:200px;padding:0"> 
+         
+                 
+    </div>
+    <div data-options="region:'center'">
+           <div id="tt" class="easyui-tabs" fit='true'>  
+             <div title="桌面" data-options="closable:true">  
+               <iframe id="mainFrame" src="app.html" frameborder=0 style="width:100%;height:100%;margin:0;padding:0;"></iframe>
+            </div>   
+           </div>        
+    </div>  
+</div> 
+</div> 
+</body>
+<script type="text/javascript">
+var auth;
+$(function(){
+    auth=document.cookie.split(";")[0].split("=")[1];
+	initMenu();
+})
+
+function menuTab(url,text)
+{     
+	  document.getElementById("mainFrame").setAttribute("src",url);
+	  var pp=$('#tt').tabs('getSelected');
+	  $('#tt').tabs('update',{
+		  tab:pp,
+		  options:{
+			  title:text
+		  },   		  
+	  });
+}
+
+function initMenu(){
+	$.ajax({
+		url:"../lib/Menu.json",
+		type:"get",
+		success: function(msg){
+		     forMyMenu(msg.children);
+		}
+	})	
+}
+ function forMyMenu(msg){
+	 var Child=msg;
+	 var html='<div id="Menus" class="easyui-accordion" style="height:200px;" fit="true">';
+	 for (var i=0;i<Child.length;i++){
+		 var headnav='<div title="'+Child[i].text+'" style="overflow:auto;padding:10px;">';
+		 var centernav="";
+		 var footnav='</div>';
+		 if(Child[i].children!='[]'||Child[i].children.length<1){
+			 for(var j=0;j<Child[i].children.length;j++){
+				 if(parseInt(Child[i].children[j].flag)>auth){
+					 continue;
+				 }
+				 centernav=centernav+"<a  href='javascript:void(0)' class='easyui-linkbutton' plain=true style='width: 100%;text-align: left' onclick='menuTab(\""+Child[i].children[j].url+"\",\""+Child[i].children[j].text+"\")'>"+Child[i].children[j].text+"</a>";
+			 }
+		 }
+		if(centernav==""){
+			continue;
+		}
+		html=html+headnav+centernav+footnav;	 
+     }
+	 html=html+'</div>';	 
+	 $("#west").append(html);
+	 $.parser.parse($('#Menus').parent());	 
+ }
+ 
+ 
+ function cancel(){
+		var url=context+'farmer.action?method=cancel';
+		$.messager.confirm('确认','你确定要退出系统吗？',function(r){    
+		    if (r){    
+		    	 window.location.href=url;   
+		    }    
+		});
+	}
+
+</script>
+</html>

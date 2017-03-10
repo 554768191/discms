@@ -1,0 +1,40 @@
+.bank_list .bank_info{
+	width: 92%;
+	margin: 0 auto;
+	margin-top: 0.9rem;
+}
+.bank_list .bank_name>div{
+	height: 5rem;
+	text-align: center;
+	border:1px solid #DBDBDB;
+	background-color: #fff;
+	border-right: none;
+	border-top-left-radius: 0.3rem;
+	border-bottom-left-radius: 0.3rem;
+}
+.bank_list .bank_name>div span{
+	margin: 0 auto;
+    line-height: 5rem;
+}
+.bank_list .bank_detail>div{
+	height: 2.5rem;
+	text-align: center;
+	border:1px solid #DBDBDB;
+	background-color: #fff;
+}
+.bank_list .bank_detail>div:first-child{
+	font-size: 1rem;
+	border-top-right-radius: 0.3rem;
+}
+.bank_list .bank_detail>div:last-child{
+	border-top: none;
+	border-bottom-right-radius: 0.3rem;
+}
+.bank_list .bank_detail>div span{
+	margin: 0 auto;
+    line-height: 2.5rem;
+}
+.bank_list .bank_detail>div span i{
+	vertical-align: middle;
+}
+

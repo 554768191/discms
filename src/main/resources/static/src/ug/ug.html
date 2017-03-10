@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+    <body>
+       <script type='text/javascript' src='../js/zepto.min.js' charset='utf-8'></script>
+       <script>
+        $(function(){
+        $.get(
+                "/src/ug/index.do?timeStamp=" + new Date().getTime(),
+                {gameid:1,webtype:'Smart'},
+                function(result){
+                   if(result){
+                      var b=$.parseJSON(result);
+                      if(b.code==0){
+                        window.location.href=b.msg;
+                      }else{
+                         alert("平台维护");
+                         history.go(-1);
+                      }
+                   }
+                }
+              );
+        });
+        
+        </script>
+    </body>
+</html>

@@ -1,0 +1,125 @@
+/**
+   background-color
+*/
+.red1{background-color: #da1e1c;}
+.background-gray{background-color: #eeeeee;}
+.background-white{background-color: #fff;}
+.background-gray2{background-color: #d7d7d7;}
+.background-black{background-color: #000;}
+.background-gray3{background-color:#E4E0DF}
+
+
+/**
+ border
+*/
+.border-bottom{border-bottom: 1px solid #D7D7D7;}
+
+/**
+  font
+*/
+.font-white{color:#fff;}
+.font-gray{color: #9A9A9A;}
+.font-bold{font-weight: bold;}
+.font-middle{font-size: 0.75rem;}
+.font-red{color: #da1e1c;}
+.font-black{color: #3d4145;}
+.font-small{font-size: 0.6rem}
+
+/**
+ max-height
+*/
+.content-img{max-height: 1.2rem;}
+
+/**
+ title-content
+*/
+.content-h1{padding:0.25rem;}
+.live-icon{
+    width:1.4rem;
+    height:1.4rem;
+    display:inline-block;
+    background: url("../img/icon/live.png") no-repeat;
+    pointer-events: none;
+}
+.lottery-icon{
+    width:1.4rem;
+    height:1.4rem;
+    display:inline-block;
+    background: url("../img/icon/lottory.png") no-repeat;
+    pointer-events: none;
+}
+.sport-icon{
+    width:1.4rem;
+    height:1.4rem;
+    display:inline-block;
+    background: url("../img/icon/sport.png") no-repeat;
+    pointer-events: none;
+}
+.slot-icon{
+    width:1.4rem;
+    height:1.4rem;
+    display:inline-block;
+    background: url("../img/icon/slot.png") no-repeat;
+    pointer-events: none;
+}
+
+.ver-border{
+    width:0.05rem;
+    height: 3rem;
+    background-color: #d7d7d7;
+    margin-left: 49%;
+    margin-top: 1.5rem;
+}
+
+/**
+  header
+*/
+.header-img{max-height: 1.8rem;margin-top:0.2rem;}
+.header-logo{max-height: 2rem;margin-top: 0.1rem;}
+.header-img-right{max-height:1.2rem;margin-top: 0.5rem;}
+.header-left-link:active{background-color: #b90907;}
+
+.bar-img{max-height: 1.2rem;}
+.bar-active{}
+a:active {
+    color: #0a8ddf;
+}
+
+/**
+ font-size
+*/
+.font-14{
+    font-size: 0.7rem;
+}
+.font-15{
+    font-size: 0.75rem;
+}
+.font-16{
+    font-size: 0.8rem;
+}
+.font-18{
+    font-size: 0.9rem;
+}
+.font-20{
+    font-size: 1rem;
+}
+
+/**
+  text-align
+*/
+.font-right{
+    text-align: right;
+}
+.font-left{
+    text-align: left;
+}
+
+/**
+  position
+*/
+.pos-re{
+    position: relative;
+}
+.pos-ab{
+    position: absolute;
+}

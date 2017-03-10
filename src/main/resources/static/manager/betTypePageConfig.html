@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>投注记录配置</title>
+</head>
+<body>
+       <div style="margin:auto;width:800px;">
+               
+       
+                <p>
+                    <label for="">页面：</label><span id="registerPage">betting.html</span>
+                    <button onclick='createPage()'>生成页面</button>
+                    <a href="/src/CH/betting.html" target="_blank">预览页面</a>
+                </p>
+ 
+       </div>
+
+<script src="../lib/jquery.min.js"></script>
+<script type="text/javascript">
+function createPage(){
+	$.get(
+	   '/manager/betType/create',
+	   {},
+	   function(result){
+		   alert(result);
+	   }
+	);
+}
+</script>
+
+</body>
+</html>

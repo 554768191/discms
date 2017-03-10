@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>存取款记录配置</title>
+</head>
+<body>
+       <div style="margin:auto;width:800px;">
+               
+       
+                <p>
+                    <label for="">页面：</label><span id="registerPage">money_record.html</span>
+                    <button onclick='createPage()'>生成页面</button>
+                    <a href="/src/CH/money_record.html" target="_blank">预览页面</a>
+                </p>
+ 
+       </div>
+
+<script src="../lib/jquery.min.js"></script>
+<script type="text/javascript">
+function createPage(){
+	$.get(
+	   '/manager/moneyRecord/create',
+	   {},
+	   function(result){
+		   alert(result);
+	   }
+	);
+}
+</script>
+
+</body>
+</html>
